@@ -1,10 +1,11 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono, JetBrains_Mono} from "next/font/google";
 
+import { Footer } from "@/components/Footer";
+
 import "./globals.css";
 
 // Fonts 
-
 const JetBrainsMono = JetBrains_Mono({
   variable: "--font-jb-mono",
   subsets: ["latin"],
@@ -42,6 +43,11 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
         <main className="relative flex-1 pt-14">
           {children}
         </main>
+
+        <hr className="footer-divider" />
+        
+        <Footer />
+      
       </body>
 
     </html>
