@@ -24,9 +24,11 @@ async function getLatestCommitGitHub(): Promise<Commit | null> {
     // The 'date' value is a `datestring` in the ISO 8601 format (Z tz = UTC) i.e. "2011-10-05T14:48:00.000Z"
     // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date#date_time_string_format
     const dateOptions: Intl.DateTimeFormatOptions = {
-      day: "numeric",
-      month: "short",
-      year: "numeric",
+      // day: "numeric",
+      // day: "2-digit",
+      // month: "short",
+      // year: "numeric",
+      dateStyle: "short"
     };
 
     const date = new Date(result.commit.author.date).toLocaleDateString(
@@ -66,9 +68,9 @@ export async function LatestGitCommit() {
       className="commit"
       title={commit.message}
     >
-      <span>Site updated: </span>
-      <span> {commit.date}</span>
-      <code> ({commit.sha})</code>
+      <span>Rev: </span>
+      <code>{commit.sha} </code>
+      <span>({commit.date})</span>
       <span> - {commit.message}</span>
     </a>
   );
