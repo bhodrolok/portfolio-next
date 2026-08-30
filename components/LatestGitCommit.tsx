@@ -19,7 +19,7 @@ async function getLatestCommitGitHub(): Promise<Commit | null> {
     // The first 7 digits (short SHA-1) are enough to identify 
     // (https://git-scm.com/book/en/v2/Git-Tools-Revision-Selection) 
     const sha = result.sha.substring(0, 7);
-    const message = result.commit.message;
+    const message = result.commit.message.substring(0, 21);
 
     // The 'date' value is a `datestring` in the ISO 8601 format (Z tz = UTC) i.e. "2011-10-05T14:48:00.000Z"
     // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date#date_time_string_format
@@ -66,10 +66,10 @@ export async function LatestGitCommit() {
       className="commit"
       title={commit.message}
     >
-      <span className="muted">Site updated:</span>
-      <span>{commit.date}</span>
-      <code>({commit.sha})</code>
-      <span>({commit.message})</span>
+      <span>Site updated: </span>
+      <span> {commit.date}</span>
+      <code> ({commit.sha})</code>
+      <span> - {commit.message}</span>
     </a>
   );
 }
