@@ -35,7 +35,7 @@ export function Footer() {
 
           <div className="footer-cell footer-links">
             <Link
-              href="https://github.com/foo/bar"
+              href="https://github.com/bhodrolok/portfolio-next"
               target="_blank"
               rel="noreferrer"
               className="source-link"
