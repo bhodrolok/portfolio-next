@@ -137,7 +137,7 @@ export default function NavBar() {
         {moreOpen && (
           <div
             role="menu"
-            className="absolute right-0 top-full z-50 mt-2 w-64 p-2"
+            className="absolute left-1/2 top-full z-50 mt-2 w-64 -translate-x-1/2 p-2"
           >
             {moreNav.map((item) => (
               <a
