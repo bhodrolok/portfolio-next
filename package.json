@@ -3,12 +3,13 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "bun --bun next dev", 
-    "build": "bun --bun next build", 
+    "dev": "bun --bun next dev",
+    "build": "bun --bun next build",
     "start": "bun --bun next start",
     "lint": "eslint"
   },
   "dependencies": {
+    "lucide-react": "^1.38.0",
     "next": "16.3.3",
     "react": "19.2.8",
     "react-dom": "19.2.8"
